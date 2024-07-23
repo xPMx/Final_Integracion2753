@@ -1,14 +1,14 @@
 const request = require("supertest");
 const app = require("../app");
-const sequelize = require("../config/database"); // Ensure correct import
+const sequelize = require("../config/database");
 
 beforeAll(async () => {
-  await sequelize.authenticate(); // Ensure connection is established
-  await sequelize.sync({ force: true }); // Sync database
+  await sequelize.authenticate();
+  await sequelize.sync({ force: true });
 });
 
 afterAll(async () => {
-  await sequelize.close(); // Close connection
+  await sequelize.close();
 });
 
 describe("Auth Routes", () => {
